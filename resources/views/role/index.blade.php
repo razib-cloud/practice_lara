@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    hi
+    <table border="1">
+        
+        <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Adress</th>
+    </tr>
+
+    <tbody>
+        @foreach ($users as $data )
+        <th > {{$data['id']}}</th>
+        <th > {{$data['name']}}</th>
+        <th > {{$data['address']}}</th>
+
+        @endforeach
+
+    </tbody>
+    </table>
 </body>
 </html>
