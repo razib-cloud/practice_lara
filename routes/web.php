@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,21 +21,21 @@ Route::get('/', function () {
 });
 
 
-Route::get("/razib", function() {
-return view("user");
-});
+// Route::get("/razib", function() {
+// return view("user");
+// });
 
 
-Route::get('/users/{name?}', function($name=""){
-echo "My name is {$name}";
+// Route::get('/users/{name?}', function($name=""){
+// echo "My name is {$name}";
 
-});
+// });
 
 
-Route::get("/salman/{userName}", function($name){
-    return view("user", compact('name'));
+// Route::get("/salman/{userName}", function($name){
+//     return view("user", compact('name'));
 
-});
+// });
 
 
 Route::get("userlist", function(){
@@ -61,5 +63,17 @@ Route::get("/roleupdate", [RoleController::class, 'update']);
 
 
 Route::post("/rolecreate", [RoleController::class, 'store']);
+
+
+
+
+Route::get("/test/{id?}/{name?}", [TestController::class, 'index']);
+
+
+
+
+Route::get('user/', [UserController::class, 'index']);
+Route::get('/user/create', [UserController::class, 'create']);
+Route::post('/user/store', [UserController::class, 'store']);
 
 
